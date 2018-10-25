@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarList.Web", "CarList.Web\CarList.Web.csproj", "{28481BF0-9EB8-46BA-A02B-FFB905AFFAA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarList.Data", "CarList.Data\CarList.Data.csproj", "{26FAB627-522F-4FAB-AC57-E06610523905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarList.Data.Test", "CarList.Data.Test\CarList.Data.Test.csproj", "{1D895412-D677-4AA6-B037-209D967C8275}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28481BF0-9EB8-46BA-A02B-FFB905AFFAA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28481BF0-9EB8-46BA-A02B-FFB905AFFAA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28481BF0-9EB8-46BA-A02B-FFB905AFFAA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28481BF0-9EB8-46BA-A02B-FFB905AFFAA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26FAB627-522F-4FAB-AC57-E06610523905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FAB627-522F-4FAB-AC57-E06610523905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FAB627-522F-4FAB-AC57-E06610523905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FAB627-522F-4FAB-AC57-E06610523905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D895412-D677-4AA6-B037-209D967C8275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D895412-D677-4AA6-B037-209D967C8275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D895412-D677-4AA6-B037-209D967C8275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D895412-D677-4AA6-B037-209D967C8275}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
