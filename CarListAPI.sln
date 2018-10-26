@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarList.Data", "CarList.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarList.Data.Test", "CarList.Data.Test\CarList.Data.Test.csproj", "{1D895412-D677-4AA6-B037-209D967C8275}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarList.Web.Test", "CarList.Web.Test\CarList.Web.Test.csproj", "{BDD4744D-DD5B-41F4-8CF0-055CA0357714}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{1D895412-D677-4AA6-B037-209D967C8275}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D895412-D677-4AA6-B037-209D967C8275}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D895412-D677-4AA6-B037-209D967C8275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDD4744D-DD5B-41F4-8CF0-055CA0357714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD4744D-DD5B-41F4-8CF0-055CA0357714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD4744D-DD5B-41F4-8CF0-055CA0357714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD4744D-DD5B-41F4-8CF0-055CA0357714}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

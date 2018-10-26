@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using CarList.Data.Contexts;
@@ -10,7 +9,7 @@ namespace CarList.Web.Repositories
     public class CarRepository : ICarRepository
     {
         private static IContext<CarData> _context;
-        CarRepository(IContext<CarData> context)
+        public CarRepository(IContext<CarData> context)
         {
             _context = context;
         }
@@ -18,7 +17,12 @@ namespace CarList.Web.Repositories
         public Car GetCarById(string id)
         {
             var carData = _context.GetById(id);
-            Car car = new Car()
+            if (carData == null)
+            {
+                return null;
+            }
+
+            var car = new Car()
             {
                 Id = carData.Id,
                 Make = carData.Make,
@@ -45,7 +49,7 @@ namespace CarList.Web.Repositories
             return cars.ToList();
         }
 
-        public void AddCar(Car car)
+        public void Add(Car car)
         {
             var carData = new CarData()
             {
@@ -53,28 +57,27 @@ namespace CarList.Web.Repositories
                     Make = car.Make,
                     Model = car.Model,
                     Trim = car.Trim,
-                    Year = car.Year
+                    Year = car.Year,
             };
             
             _context.Save(carData);
         }
 
-        public void RemoveCar(string id)
-        {
-            _context.Delete(id);
-        }
-
-        public void UpdateCar(Car car)
+        public void Update(string id, Car car)
         {
             var carData = new CarData()
             {
-                Id = car.Id,
                 Make = car.Make,
                 Model = car.Model,
                 Trim = car.Trim,
-                Year = car.Year
+                Year = car.Year,
             };
-            
+            _context.Update(id, carData);
+        }
+
+        public void Remove(string id)
+        {
+            _context.Delete(id);
         }
     }
 }

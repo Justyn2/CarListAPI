@@ -1,15 +1,17 @@
-﻿using System;
+﻿// using System;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+// using System.Threading.Tasks;
 using CarList.Web.Models;
 using CarList.Web.Repositories;
-using Microsoft.AspNetCore.Authorization;
+// using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarList.Web.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CarsController : ControllerBase
@@ -23,39 +25,47 @@ namespace CarList.Web.Controllers
             _carRepository = carRepository;
         }
 
-        // GET api/values
+        // GET api/cars
         [HttpGet]
         public ActionResult<IEnumerable<Car>> Get()
         {
             return _carRepository.GetAllCars(pageSize).ToList();
         }
 
-        // GET api/values/5
+        // GET api/cars/{GUID}
         [HttpGet("{id}")]
         public ActionResult<string> Get(string id)
         {
             var car = _carRepository.GetCarById(id);
-            return new JsonResult(car);
+            if (car == null)
+            {
+                return NotFound();
+            }
+            var result = new JsonResult(car);
+            return result;
         }
 
-        // POST api/values
+        // POST api/cars
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Car car)
         {
+            // POST should only create a new item, so we give it a new unique id
+            car.Id = Guid.NewGuid().ToString();
+            _carRepository.Add(car);
         }
 
-        // PUT api/values/5
+        // PUT api/cars/{GUID}
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(string id, [FromBody] Car car)
         {
-            // For more information on protecting this API from Cross Site Request Forgery (CSRF) attacks, see https://go.microsoft.com/fwlink/?LinkID=717803
+            _carRepository.Update(id, car);
         }
 
-        // DELETE api/values/5
+        // DELETE api/cars/{GUID}
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(string id)
         {
-            // For more information on protecting this API from Cross Site Request Forgery (CSRF) attacks, see https://go.microsoft.com/fwlink/?LinkID=717803
+            _carRepository.Remove(id);
         }
     }
 }

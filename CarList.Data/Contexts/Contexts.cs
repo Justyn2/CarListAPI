@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using Newtonsoft.Json;
 
 namespace CarList.Data.Contexts
@@ -11,7 +10,7 @@ namespace CarList.Data.Contexts
     public class DataStoreObject
     {
         public string Id { get; set; }
-        public bool isDeleted { get; set; }
+        public bool IsDeleted { get; set; }
 
     }
 
@@ -21,6 +20,7 @@ namespace CarList.Data.Contexts
         T GetById(string id);
         List<T> GetAll();
         void Delete(string id);
+        void Update(string id, T data);
 
     }
 
@@ -52,47 +52,58 @@ namespace CarList.Data.Contexts
 
         public void Save(T data)
         {
+            var json = JsonConvert.SerializeObject(data);
+            var newData = JsonConvert.DeserializeObject<T>(json);
+            
             if (string.IsNullOrEmpty(data.Id))
             {
-                data.Id = new Guid().ToString();
+                newData.Id = Guid.NewGuid().ToString(); 
             }
+            newData.IsDeleted = false;
+            WriteChangesToItem(newData);
+        }
 
-            data.isDeleted = false;
-            WriteChangesToItem(data.Id, data);
+        public void Update(string id, T data)
+        {
+            var json = JsonConvert.SerializeObject(data);
+            var newData = JsonConvert.DeserializeObject<T>(json);
+            newData.Id = id;
+            newData.IsDeleted = false;
+            WriteChangesToItem(newData);
         }
 
         public T GetById(string id)
         {
-            var data = Read().FirstOrDefault(x => x.Id == id && !x.isDeleted);
+            var data = Read().FirstOrDefault(x => x.Id == id && !x.IsDeleted);
             return data;
         }
 
         public List<T> GetAll()
         {
-            var data = Read();
+            var data = Read().FindAll(x=>!x.IsDeleted);
             return data;
         }
 
         public void Delete(string id)
         {
            var data = Read();
-           var result = data.FirstOrDefault(x => x.Id == id && !x.isDeleted);
+           var result = data.FirstOrDefault(x => x.Id == id && !x.IsDeleted);
             if (result != null)
             {
-                result.isDeleted = true;
-                WriteChangesToItem(id, result);
+                result.IsDeleted = true;
+                WriteChangesToItem(result);
             }
         }
 
-        private void WriteChangesToItem(string id, T data )
+        private void WriteChangesToItem(T data)
         {
             var entireFile = Read();
-            var oldData = entireFile.FirstOrDefault(x => id == x.Id);
+            var oldData = entireFile.FirstOrDefault(x => data.Id == x.Id);
             if (oldData != null)
             {
                 var index = entireFile.IndexOf(oldData);
                 entireFile[index] = data;
-            }
+            } 
             else
             {
                 entireFile.Add(data);
