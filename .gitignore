@@ -3,8 +3,7 @@
 */node_modules
 */.vscode/chrome
 CarListAPI.sln.DotSettings.user
-.idea/httpRequests/
-.idea/httpRequests/http-requests-log.http
+.idea/*
 CarList.App/build/
 .idea/.idea.CarListAPI/.idea/workspace.xml
 .idea/httpRequests/http-requests-log.http
