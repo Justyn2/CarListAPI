@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40f79c58-1663-471a-a808-5c75f2a7e195" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CarList.Web/Configuration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CarListAPI/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarListAPI/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CarListAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarListAPI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.App/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.App/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.App/src/Containers/App/App.styles.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.App/src/Containers/App/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.App/src/Containers/App/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.App/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.App/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.App/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.App/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.App/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.App/tslint.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.App/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.App/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.Web/CarList.Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.Web/CarList.Web.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.Web/Controllers/CarsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.Web/Controllers/CarsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.Web/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.Web/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.Web/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.Web/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.Web/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.Web/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarList.Web/store.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarList.Web/store.json" afterDir="false" />
-    </list>
+    <list default="true" id="40f79c58-1663-471a-a808-5c75f2a7e195" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +13,7 @@
     <session id="959919923">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.17" value="2" />
@@ -104,7 +85,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CarList.Web/Controllers/CarsController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
+            <state relative-caret-position="440">
               <caret line="60" column="40" lean-forward="true" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
               <folding>
                 <marker date="1541016203947" expanded="false" signature="24:285" ph="..." />
@@ -609,7 +590,7 @@
       <workItem from="1540823991966" duration="2234000" />
       <workItem from="1540937705520" duration="12618000" />
       <workItem from="1541023868082" duration="4055000" />
-      <workItem from="1541386163734" duration="10085000" />
+      <workItem from="1541386163734" duration="10115000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1540486839258</created>
@@ -622,7 +603,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89550000" />
+    <option name="totallyTimeSpent" value="89580000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -642,7 +623,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.8979866" visible="true" weight="0.33475178" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8979866" weight="0.33475178" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
@@ -980,7 +961,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CarList.Web/Controllers/CarsController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
+        <state relative-caret-position="440">
           <caret line="60" column="40" lean-forward="true" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
           <folding>
             <marker date="1541016203947" expanded="false" signature="24:285" ph="..." />
