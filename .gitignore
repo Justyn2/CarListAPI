@@ -2,3 +2,7 @@
 */obj
 */node_modules
 */.vscode/chrome
+CarListAPI.sln.DotSettings.user
+.idea/httpRequests/
+.idea/httpRequests/http-requests-log.http
+CarList.App/build/

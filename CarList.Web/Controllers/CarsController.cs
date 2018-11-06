@@ -6,12 +6,12 @@ using System.Linq;
 // using System.Threading.Tasks;
 using CarList.Web.Models;
 using CarList.Web.Repositories;
+using Microsoft.AspNetCore.Cors;
 // using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarList.Web.Controllers
 {
-    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CarsController : ControllerBase

@@ -43,6 +43,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="Bin" t="ExcludeRecursive" />
         <e p="CarList.Web.csproj" t="IncludeRecursive" />
+        <e p="Configuration.cs" t="Include" />
         <e p="Controllers" t="Include">
           <e p="CarsController.cs" t="Include" />
         </e>
