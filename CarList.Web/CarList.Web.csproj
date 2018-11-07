@@ -6,10 +6,11 @@
         <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
         <AssemblyName>CarList.Web</AssemblyName>
         <RootNamespace>CarList.Web</RootNamespace>
+        <RuntimeFrameworkVersion>2.1.5</RuntimeFrameworkVersion>
     </PropertyGroup>
-
+    
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="2.1.1" />
     </ItemGroup>
 
