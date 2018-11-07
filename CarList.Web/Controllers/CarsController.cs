@@ -17,7 +17,7 @@ namespace CarList.Web.Controllers
     public class CarsController : ControllerBase
     {
 
-        private const int pageSize = 50;
+        private const int PageSize = 50;
         private static ICarRepository _carRepository;
 
         public CarsController( ICarRepository carRepository)
@@ -29,7 +29,7 @@ namespace CarList.Web.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Car>> Get()
         {
-            return _carRepository.GetAllCars(pageSize).ToList();
+            return _carRepository.GetAllCars(PageSize).ToList();
         }
 
         // GET api/cars/{GUID}

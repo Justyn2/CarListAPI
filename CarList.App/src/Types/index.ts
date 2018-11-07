@@ -8,6 +8,18 @@ export interface IAppState {
     loading?:boolean;
     loaded?:boolean;
     car?:ICarModel;
+    currentFilter:filter;
+}
+
+export enum filter {
+    makeasc=1,
+    makedesc=2,
+    modelasc=3,
+    modeldesc=4,
+    trimasc=5,
+    trimdesc=6,
+    yearasc=7,
+    yeardesc=8,
 }
 
 export interface ICarModel extends ICarData {

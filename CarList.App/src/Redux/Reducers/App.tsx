@@ -5,6 +5,8 @@ import { ALL_CARS_LOAD,
   CLOSE_DIALOGUE,
   OPEN_DIALOGUE,
   SAVING_CAR,
+  UPDATE_CAR,
+  UPDATE_FILTER,
 } from '../Constants/App';
 import { IAppState, CarModel } from 'src/Types';
 
@@ -14,7 +16,8 @@ const initialState:IAppState
     dialogue:null,
     error: null,
     loaded: false,
-    loading: false
+    loading: false,
+    currentFilter:1
   };
 
   export default handleActions({
@@ -38,7 +41,7 @@ const initialState:IAppState
         loaded: true,
         loading: false, 
       }),
-    [XHR_LOAD_FAIL]: (store, {payload}:any ) => 
+      [XHR_LOAD_FAIL]: (store, {payload}:any ) => 
       { 
         let error:Error|null = null;
         if(payload){
@@ -50,6 +53,14 @@ const initialState:IAppState
         loaded: false,
         loading: false,};
       },
+      [UPDATE_FILTER]: (store,{payload}:any) => ({
+          ...store,
+          currentFilter:payload,
+      }),
+      [UPDATE_CAR]:(store, {payload}:any)=>({
+        ...store,
+        car:payload
+      }),
       [OPEN_DIALOGUE]:(store, {payload}:any) => 
       {
         const car=store.cars.find(x=>x.id===payload.id)

@@ -6,7 +6,7 @@ export interface IActionButtonProps
     action?:(_:any)=>any;
     enabled:boolean;
     style?:React.CSSProperties;
-    text:string;
+    text?:string;
     type?:string;
 }
 
@@ -23,9 +23,9 @@ export default class ActionButton extends React.Component<IActionButtonProps,{}>
        }
    }    
    public render(){
-       const {text,type, style} = this.props;
+       const {text,type, style, children} = this.props;
        return(
-        <StyledButton type={type} style={style} title={text} onClick={this.OnClick}>{text}</StyledButton>
+        <StyledButton type={type} style={style} title={text} onClick={this.OnClick}>{text}{children}</StyledButton>
        )
    }
 }

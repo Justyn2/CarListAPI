@@ -3,20 +3,24 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import CarRow, { ICarRowProps } from './CarRow';
 import { openDialogue } from 'src/Redux/Actions/App';
-import { IAppState } from 'src/Types';
+import { IAppState, filter } from 'src/Types';
 import * as Dialogues from 'src/Redux/Constants/Dialogues';
 import styled from 'styled-components';
 import { tableLength } from 'src/constants';
+import CarHeader from 'src/Containers/CarHeader';
+import CarSorter from 'src/Helpers/CarSorter';
 
 interface ICarGridProps
 {
     dispatch:Dispatch;
+    currentFilter:filter;
     cars:any[];
 }
 
 function mapStateToProps(state:{app:IAppState}) {
-    const {cars} = state.app;
-    return {cars};
+    return {
+        cars:state.app.cars, 
+        currentFilter:state.app.currentFilter};
 }
 
 class CarGrid 
@@ -33,9 +37,8 @@ extends React.Component<ICarGridProps,{}>{
         };
     }
 
-    
     public render(){ 
-        const {cars} = this.props;
+        const cars = this.props.cars.sort(CarSorter(this.props.currentFilter));
         const filler:ICarRowProps[]=[];
          if(cars.length < tableLength){
          for(let i=cars.length; i<tableLength; i++){
@@ -50,7 +53,8 @@ extends React.Component<ICarGridProps,{}>{
               }
         }
         return(
-        <GridContainer>
+        <GridContainer> 
+            <CarHeader/>
             {cars.map((car:ICarRowProps,i)=>(
             <CarRow 
                 {...car}
@@ -75,6 +79,7 @@ border-right: 2px solid black;
 border-bottom: 3px solid black;
 box-sizing:border-box;
 margin-top:8px;
+min-width:610px;
 `;
 
 export default connect(mapStateToProps)(CarGrid);

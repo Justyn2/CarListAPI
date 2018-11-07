@@ -6,6 +6,7 @@ interface IFormInputProps{
     value:string;
     label:string;
     noEdit?:boolean;
+    onChange?:(event:React.ChangeEvent)=>void;
 }
 export default class FormInput extends 
 React.Component<IFormInputProps,{}>{
@@ -13,11 +14,11 @@ React.Component<IFormInputProps,{}>{
         super(props);
     }
     public render(){
-        const {name, value, noEdit, label} = this.props
+        const {name, value, noEdit, label, onChange} = this.props
         return(
         <span>
         <label htmlFor={name}>{label}</label>
-        <StyledInput disabled={noEdit}  id={name} defaultValue={value}/>
+        <StyledInput disabled={noEdit}  id={name} defaultValue={value} onChange={onChange} />
         </span>
         )
     }

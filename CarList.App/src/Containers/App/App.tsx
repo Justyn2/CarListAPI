@@ -1,11 +1,19 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
+import { AppHeader, AppLogo, AppMain, AppTitle } from './App.styles';
+import logo from 'src/logo.svg';
+import ActionButton from 'src/Components/ActionButton/ActionButton';
 import PopOverContainer from 'src/Containers/CarDialoguePopover';
 import { getCarsIfNeeded, newCarDialogue } from 'src/Redux/Actions/App';
 import * as Dialogues from 'src/Redux/Constants/Dialogues';
-import logo from '../../logo.svg';
-import ActionButton from '../ActionButton/ActionButton';
-import { AppHeader, AppLogo, AppMain, AppTitle } from './App.styles';
 import CarGrid from 'src/Containers/CarGrid';
+import { IAppState } from 'src/Types';
+
+
+function mapStateToProps(state:{app:IAppState}) {
+  const { dialogue, error} : IAppProps = state.app;
+  return {dialogue,error};
+}
 
 export interface IAppProps
 {
@@ -51,4 +59,4 @@ class App extends React.Component<IAppProps,{}> {
   }
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

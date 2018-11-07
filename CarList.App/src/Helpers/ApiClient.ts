@@ -35,10 +35,11 @@ export default class ApiClient  {
           fields.forEach((item:{key:string, value:string}) => request.field(item.key, item.value));
         }
         if (data) {
-          request.send(data);
+          request.send(data)
+          .then(x=>resolve(x), x=>reject(x),);
+        }else{
+          request.end((err:any, { body }:any = {}) => (err ? reject(body || err) : resolve(body)))
         }
-
-        request.end((err:any, { body }:any = {}) => (err ? reject(body || err) : resolve(body)));
       });
     }
 }

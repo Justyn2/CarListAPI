@@ -24,15 +24,15 @@ React.Component<ICarRowProps,{}>{
         const {id, make, model, trim, year, bgColor, editAction, deleteAction, detailAction} = this.props;
         return(
             <Row>
-                <InfoCell style={{paddingLeft:'.5em',textDecoration:'underline'}} backgroundColor={bgColor}>
-        {detailAction ? <RowButton enabled={true} symbol={make} text={'Car Details'} action={detailAction(id)} />:null}
+                <InfoCell backgroundColor={bgColor}>
+        {detailAction ? <RowButton enabled={true} style={{textDecoration:'underline'}} symbol={make} text={'Car Details'} action={detailAction(id)} />:null}
                 </InfoCell>
                 <InfoCell data={model} backgroundColor={bgColor} />
                 <InfoCell data={trim} backgroundColor={bgColor} />
                 <InfoCell data={year} backgroundColor={bgColor} align={'right'} width={'10%'}/>
                 <InfoCell backgroundColor={bgColor} align={'center'} width={'15%'}>
-        {editAction ? <RowButton enabled={true} symbol={'🖉'} text={'Edit Car'} action={editAction(id)} /> : null }
-        {deleteAction ? <RowButton enabled={true} symbol={'🗑'} text={'Delete Car'} action={deleteAction(id)} /> : null}
+        {editAction ? <RowButton enabled={true} style={{fontWeight:900}} symbol={'🖉'} text={'Edit Car'} action={editAction(id)} /> : null }
+        {deleteAction ? <RowButton enabled={true} style={{fontWeight:900}} symbol={'🗑'} text={'Delete Car'} action={deleteAction(id)} /> : null}
                 </InfoCell>
             </Row>
         );

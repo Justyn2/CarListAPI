@@ -5,9 +5,12 @@ import { ALL_CARS_LOAD,
     ALL_CARS_LOAD_SUCCESS,
     CLOSE_DIALOGUE,
     OPEN_DIALOGUE,
-    SAVING_CAR, 
+    SAVING_CAR,
+    DELETING_CAR,
+    UPDATE_CAR,
+    UPDATE_FILTER, 
     } from '../Constants/App';
-import { IAppState, ICarModel } from 'src/Types';
+import { IAppState, ICarModel, filter } from 'src/Types';
 import * as Dialogues from '../Constants/Dialogues';
 import { CarSaveModel } from 'src/Types/savecar';
 
@@ -18,6 +21,16 @@ const loadingAllCars = () => ({
 const loadedAllCars = (cars:any) => ({
    payload:cars,
    type:ALL_CARS_LOAD_SUCCESS,
+});
+ 
+export const updateFilter = (key:filter) => ({
+    payload:key,
+    type:UPDATE_FILTER,
+});
+
+export const updateCar = (car:any) =>({
+   payload:car,
+   type:UPDATE_CAR, 
 });
 
 const XHRError = (error:Error) => ({
@@ -62,7 +75,29 @@ export const saveCar = (dispatch:any, car:ICarModel, newCar:boolean)=>{
         'Content-Type':'application/json' }
     }
     )
-    .then(dispatch(getCars()),
+    .then(() => {
+        dispatch(getCars());
+    },
+        (error) => dispatch(XHRError(error))
+    );}
+    execute();
+}
+
+export const deletingCar = () => ({
+    type:DELETING_CAR,
+});
+
+export const deleteCar = (dispatch:any, id:string|null)=>{
+    if(id===null){ return;}
+    const client = new ApiClient;
+    const del = client.request('del');
+    dispatch(deletingCar());
+    async function execute(){
+    await del(
+    `https://localhost:5001/api/cars/${id}`)
+    .then(() => {
+        dispatch(getCars());
+    },
         (error) => dispatch(XHRError(error))
     );}
     execute();

@@ -38,5 +38,4 @@ const StyledIconButton = styled.div`
     padding-right: .25em;
     margin-left:.25em;
     margin-right:.25em;
-    font-weight: 900;
 `;
